@@ -291,7 +291,7 @@ a{color:#0075C1;text-decoration:none}a:hover{color:#005A94}
     var isSales = on && on.getAttribute('data-route') === 'sales';  /* Yedek Parça, Cihaz Satın Alma, Kiralama, Cihazımı Satmak -> sales@ ; diğerleri -> service@ */
     var key = isSales ? WEB3FORMS.sales : WEB3FORMS.service;
     var btn = form.querySelector('button[type="submit"]'), label = btn.textContent;
-    var data = { access_key: key, subject: (isSales ? '[Satış] ' : '[Servis] ') + (on ? on.textContent : '') + ' – gamatek.com.tr', from_name: 'gamatek.com.tr web formu', 'Talep türü': on ? on.textContent : '', 'Sayfa dili': document.documentElement.lang };
+    var data = { access_key: key, subject: (isSales ? '[Satış] ' : '[Servis] ') + (on ? on.textContent : '') + ' – Intl site', from_name: 'Web Formu', 'Talep türü': on ? on.textContent : '', 'Sayfa dili': document.documentElement.lang };
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     if (data.botcheck) return;
     err.hidden = true; btn.disabled = true; btn.textContent = '…';
